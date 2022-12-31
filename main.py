@@ -1,16 +1,20 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import streamlit as st
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+st.set_page_config(layout='wide')
 
+col1, col2, col3 = st.columns(3)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+with col1:
+    st.image("images/1.png")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+with col2:
+    st.title("Togai Tunca")
+    content = """
+    I am a Python programmer, teacher, founder of PythonNow. I am a self taught programmer.
+    """
+    st.info(content)
+content2 = """
+Below you can find some of the apps I have built in Python. feel free to contact me.
+"""
+st.write(content2)
