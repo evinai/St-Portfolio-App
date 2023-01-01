@@ -37,6 +37,7 @@ lottie_coding = load_lottie_file("lottiefiles/programming-computer.json")
 lottie_hello = load_lottie_url("https://assets8.lottiefiles.com/packages/lf20_iVPQC8jyX2.json")
 
 with st.sidebar:
+    # ToDo: Update and link option menu
     selected = option_menu(
 
         menu_title="Portfolio Links",
@@ -45,6 +46,7 @@ with st.sidebar:
         orientation='vertical',
 
     )
+
 
 col1, col2, col3 = st.columns(3)
 with st.container():
@@ -59,7 +61,10 @@ with st.container():
                   )
 
     with col2:
-        st.title("Togai Tunca")
+        st.image("images/togaylogo.png", width=300)
+        st.markdown("___")
+        st.markdown("")
+
         content = """
         I am a Python programmer, teacher, founder of PythonNow. I am a self taught programmer.
         """
@@ -86,7 +91,7 @@ df = pd.read_csv("data.csv", sep=";")
 
 with col4:
     for index, row in df[:10].iterrows():
-        st.header(row['title'])
+        st.subheader(row['title'])
         st.write(row['description'])
         st.image("images/" + row["image"], width=300)
         st.write(f"[Source Code]({row['url']})")
@@ -94,7 +99,7 @@ with col4:
 st.markdown("___")
 with col5:
     for index, row in df[10:].iterrows():
-        st.header(row['title'])
+        st.subheader(row['title'])
         st.write(row['description'])
         st.image("images/" + row["image"], width=300)
         st.write(f"[Source Code]({row['url']})")
